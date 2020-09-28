@@ -1,0 +1,171 @@
+﻿.content-wrapper {
+    background-color: #E9E9E9 !important;
+}
+
+/* BACKGROUNDS, TEXTOS E LINKS */
+.bg-opacity {
+    background: rgba(0,0,0,0.2) !important;
+}
+
+.bg-hover {
+	background-color: #04568C !important;
+}
+
+.bg-primary {
+	background-color: #056EB3 !important;
+}
+
+a.bg-primary:hover {
+  background-color: #04568C !important;
+}
+
+.color-primary {
+	color: #056EB3 !important;
+}
+
+a.color-primary:hover {
+	color: #04568C !important;
+}
+
+.color-hover {
+    color: #04568C !important;
+}
+
+.color-fff {
+    color: #fff !important;
+}
+
+.color-888 {
+    color: #888 !important;
+}
+
+.bg-333 {
+    background-color: #333 !important;
+}
+.bg-333:hover{
+	background-color:#056EB3 !important;
+	border:	thin !important;
+	box-shadow: 6px 6px 10px #999 !important;
+}
+
+/* BACKGROUND APPS */
+
+.bg-email {
+    background-color: #006EC4 !important;
+}
+
+.bg-onedrive {
+    background-color: #0949B3 !important;
+}
+
+.bg-calendario {
+    background-color: #55419A !important;
+}
+
+.bg-skype {
+    background-color: #1EB7EC !important;
+}
+
+.bg-word {
+    background-color: #285498 !important;
+}
+
+.bg-skype:hover{
+	background-color:#7B3460 !important;
+	border:	inherit!important;
+	box-shadow: 6px 6px 10px #999 !important;
+
+}
+
+
+.bg-excel {
+    background-color: #1E7043 !important;
+}
+
+.bg-powerpoint {
+    background-color: #D24624 !important;
+}
+.bg-powerpoint:hover{
+	background-color:#D24610 !important;
+	border:	inherit!important;
+	box-shadow: 6px 6px 10px #999 !important;
+
+}
+
+
+.bg-onenote {
+    background-color: #7B3476 !important;
+}
+
+.bg-onenote:hover{
+	background-color:#7B3460 !important;
+	border:	inherit!important;
+	box-shadow: 6px 6px 10px #999 !important;
+
+}
+
+.bg-video {
+    background-color: #4557A4 !important;
+}
+
+.bg-planner {
+    background-color: #31752F !important;
+}
+
+.bg-forms {
+    background-color: #008272 !important;
+}
+
+.bg-yammer {
+    background-color: #0070C9 !important;
+}
+/* MENU LATERAL */
+
+.main-sidebar {
+	background-color: #333 !important;
+}
+
+.sidebar-menu > li.header {
+	background-color: #222 !important;
+	color: #fff !important;
+}
+
+.sidebar-menu > li > a {
+	color: #fff !important;
+}
+
+.sidebar-menu > li > a:hover {
+	background-color: #444 !important;
+	color: #fff !important;
+}
+
+.sidebar-menu > li.active > a {
+	border-left-color: #056EB3 !important;
+	background-color: #444 !important;
+	color: #fff !important;
+}
+
+.sidebar-menu > li.menu-open > a {
+	background-color: #444 !important;
+}
+
+.sidebar-menu > li > .treeview-menu {
+	background-color: #444 !important;
+}
+
+.sidebar-menu .treeview-menu > li > a {
+	color: #fff !important;
+}
+
+/* ALERTA */ 
+
+.alerta {
+    background-color: #f39c12 !important;
+    color: #fff !important;
+    border-color: transparent !important;
+}
+
+.alerta .close {
+    color: #fff !important;
+    opacity: 1 !important;
+}

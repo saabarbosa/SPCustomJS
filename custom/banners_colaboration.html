@@ -1,0 +1,146 @@
+﻿<!--HTML BANNER-->
+<div class="content">
+<div class="row">
+<div class="col-md-8">
+	<div id="dvBanner" ng-app="banner">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" ng-controller="myCtrlBanner">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="{{$index}}" class=""  ng-class="{active:!$index}" ng-repeat="bann in records"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item" ng-class="{active:!$index}" ng-repeat="bann in records">
+
+                <img src="{{bann.Imagem}}" alt="{{bann.Titulo}}" style="max-width: 100%;margin: 0 auto;">
+                <div class="carousel-caption">
+                  {{bann.Titulo}}
+                </div>
+
+          </div>
+        </div>
+
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="fa fa-angle-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="fa fa-angle-right"></span>
+        </a>
+  </div> 
+  </div>
+  </div>
+  
+  <!--HTML COLABORAÇÃO-->
+  <div class="col-md-4">
+   <div id="dvColaboracao" ng-app="appColaboracao">
+    <div ng-controller="myCtrlColaboracao">
+        <div ng-repeat="col in records">
+            <a href="{{col.URL}}">
+            <div class="bloco-app-col bg-333">
+                <span class="icon-app-col"><img src="{{col.Imagem}}"></span>
+                <span class="text-app-col">{{col.Titulo}}</span>
+            </div>
+            </a>
+        </div>
+    </div>
+</div>
+</div></div></div>
+
+
+
+
+<!--SCRIPT COLABORAÇÃO-->
+<script>
+$("#dvColaboracao").hide();
+$( document ).ready(function() {
+   var appColaboracao = angular.module("appColaboracao", []);
+   
+   appColaboracao.controller("myCtrlColaboracao", function($scope) { 
+
+        $SP().list("Colaboracao").get({
+        fields:"ID, Title, Imagem, URL, Ordem",
+        orderby:"ID DESC"
+        }).then (function(data) {
+            
+           colab = '[';    
+           for(i=0; i<data.length; i++){
+               if (i<(data.length-1)){
+                   colab+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Imagem":"'+ data[i].getAttribute("Imagem")+'","URL":"'+ data[i].getAttribute("URL") +'"},';
+               }else{
+                   colab+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Imagem":"'+ data[i].getAttribute("Imagem")+'","URL":"'+ data[i].getAttribute("URL") +'"}';
+               }
+           }
+           colab += ']'; 
+           console.log('colab:'+ colab);
+           localStorage.setItem("Colaboracao",colab);
+
+        });
+
+        $scope.records = JSON.parse(localStorage.getItem("Colaboracao"));
+   });
+    var dvColaboracao = document.getElementById('dvColaboracao');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvColaboracao, ['appColaboracao']);
+        $("#dvColaboracao").show();
+    }); 
+}); 
+
+</script>
+
+
+<!-- /BANNER -->
+ 
+<script>
+$("#dvBanner").hide();
+$( document ).ready(function() {
+   var banner = angular.module("banner", []);
+   
+   banner.controller("myCtrlBanner", function($scope) { 
+
+        $SP().list("Banners").get({
+        fields:"ID, Title, Imagem, URL, Ativo, Ordem",
+        orderby:"ID ASC"
+        }).then (function(data) {
+          
+           bann = '[';    
+           for(i=0; i<data.length; i++){
+               ativo = data[i].getAttribute("Ativo");
+               if (ativo == 'Ativo')
+                   ativo = 'item active';
+               else
+                   ativo = 'item';
+                if (i<(data.length-1)){
+                   bann+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Imagem":"'+ data[i].getAttribute("Imagem")+'","Ativo":"'+ ativo +'","URL":"'+ data[i].getAttribute("URL") +'","Contador":"'+ i +'"},';
+               }else{
+                   bann+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Imagem":"'+ data[i].getAttribute("Imagem")+'","Ativo":"'+ ativo +'","URL":"'+ data[i].getAttribute("URL") +'","Contador":"'+ i +'"}';
+               }
+           }
+           bann += ']'; 
+           console.log('bann:'+ bann);
+           localStorage.setItem("Banner",bann);
+
+        });
+        $scope.records = JSON.parse(localStorage.getItem("Banner"));
+   });
+    var dvBanner = document.getElementById('dvBanner');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvBanner, ['banner']);
+        $("#dvBanner").fadeIn();
+    }); 
+}); 
+
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingIsFurlPage msdt:dt="string">0</mso:PublishingIsFurlPage>
+<mso:PublishingContactPicture msdt:dt="string"></mso:PublishingContactPicture>
+<mso:PublishingRollupImage msdt:dt="string"></mso:PublishingRollupImage>
+<mso:Audience msdt:dt="string"></mso:Audience>
+<mso:PublishingContactName msdt:dt="string"></mso:PublishingContactName>
+<mso:Comments msdt:dt="string"></mso:Comments>
+<mso:PublishingContactEmail msdt:dt="string"></mso:PublishingContactEmail>
+<mso:DefaultCssFile msdt:dt="string"></mso:DefaultCssFile>
+<mso:MasterPageDescription msdt:dt="string"></mso:MasterPageDescription>
+<mso:UIVersion msdt:dt="string">;#15;#</mso:UIVersion>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>

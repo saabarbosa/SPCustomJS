@@ -1,0 +1,101 @@
+﻿<!-- EVENTOS -->
+<div>
+<div class="box box-solid bg-video">
+    <div class="box-header with-border bg-video">
+		<i class="fa fa-calendar"></i>
+		<h3 class="box-title">Eventos</h3>
+      </div>
+        <div class="box-body" id="dvEventos" ng-app="eventos">
+          <ul class="products-list product-list-in-box" ng-controller="myCtrlEventos">
+            <li class="item bg-video item-evento" ng-repeat="even in records">
+				<div class="product-img bg-opacity dt-evento img-circle">
+					<span class="data-evento color-fff">{{even.Dia}}</span>
+				</div>
+              <div class="product-info info-evento">
+					<a href="#" class="product-title color-fff">{{even.Titulo}}</a>
+						<span class="label pull-right color-fff bg-opacity mes-evento">{{even.Mes}}</span>
+						<span class="product-description color-fff hora-evento">{{even.Hora}}</span>
+					<span class="product-description color-fff">
+						{{even.Descricao}}
+                    </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+   </div>   
+   </div>          
+<!-- /EVENTOS -->
+
+
+<script>
+$("#dvEventos").hide();
+$( document ).ready(function() {
+   var eventos = angular.module("eventos", []);
+   
+   eventos.controller("myCtrlEventos", function($scope) { 
+
+        $SP().list("Eventos").get({
+        fields:"ID, Title, Data, Descricao",
+        orderby:"ID ASC"
+        }).then (function(data) {
+          
+           evento = '[';    
+           for(i=0; i<data.length; i++){
+               data_evento = data[i].getAttribute("Data");
+               
+                var mes = data_evento.substring(5,7);
+                switch(mes){
+                    case "01": mes = 'janeiro';break;
+                    case "02": mes = 'fevereiro';break;
+                    case "03": mes = 'março';break;
+                    case "04": mes = 'abril';break;
+                    case "05": mes = 'maio';break;
+                    case "06": mes = 'junho';break;
+                    case "07": mes = 'julho';break;
+                    case "08": mes = 'agosto';break;
+                    case "09": mes = 'setembro';break;
+                    case "10": mes = 'outubro';break;
+                    case "11": mes = 'novembro';break;
+                    default: mes = 'dezembro';break;        
+                }
+               
+                var dia = data_evento.substring(8,10);
+                var hora = data_evento.substring(10,16);
+               
+               if(i<(data.length-3)){
+               	   evento+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Descricao":"'+ data[i].getAttribute("Descricao")+'","Dia":"'+ dia +'","Mes":"'+ mes +'","Hora":"'+ hora +'"},';
+               }else{
+                   evento+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Descricao":"'+ data[i].getAttribute("Descricao")+'","Dia":"'+ dia +'","Mes":"'+ mes +'","Hora":"'+ hora +'"}';
+               }
+           }
+           evento += ']'; 
+           console.log('evento:'+ evento);
+           localStorage.setItem("Eventos",evento);
+
+        });
+        $scope.records = JSON.parse(localStorage.getItem("Eventos"));
+   });
+    var dvEventos = document.getElementById('dvEventos');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvEventos, ['eventos']);
+        $("#dvEventos").fadeIn();
+    }); 
+}); 
+</script>
+
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingIsFurlPage msdt:dt="string">0</mso:PublishingIsFurlPage>
+<mso:PublishingContactPicture msdt:dt="string"></mso:PublishingContactPicture>
+<mso:PublishingRollupImage msdt:dt="string"></mso:PublishingRollupImage>
+<mso:Audience msdt:dt="string"></mso:Audience>
+<mso:PublishingContactName msdt:dt="string"></mso:PublishingContactName>
+<mso:Comments msdt:dt="string"></mso:Comments>
+<mso:PublishingContactEmail msdt:dt="string"></mso:PublishingContactEmail>
+<mso:DefaultCssFile msdt:dt="string"></mso:DefaultCssFile>
+<mso:MasterPageDescription msdt:dt="string"></mso:MasterPageDescription>
+<mso:UIVersion msdt:dt="string">;#15;#</mso:UIVersion>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>

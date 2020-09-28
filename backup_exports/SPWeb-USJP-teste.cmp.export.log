@@ -1,0 +1,224 @@
+[2019-06-08 7:42:27 PM] Start Time: 2019-06-08 7:42:27 PM.
+[2019-06-08 7:42:27 PM] Progress: Initializing Export.
+[2019-06-08 7:42:27 PM] Warning: Export only contains the last major of a file.
+[2019-06-08 7:42:27 PM] Progress: Starting Export.
+[2019-06-08 7:42:27 PM] Progress: Calculating Objects to Export.
+[2019-06-08 7:42:28 PM] Progress: Serializing Objects to Disk.
+[2019-06-08 7:42:28 PM] Progress: Starting to process objects of type Min.
+[2019-06-08 7:42:28 PM] Progress: Finished processing objects of type Min.
+[2019-06-08 7:42:28 PM] Progress: Starting to process objects of type Web.
+[2019-06-08 7:42:28 PM] Progress: Exporting Web http://usjp-v09/teste.
+[2019-06-08 7:42:28 PM] Progress: Finished processing objects of type Web.
+[2019-06-08 7:42:28 PM] Progress: Starting to process objects of type Folder.
+[2019-06-08 7:42:28 PM] [Folder] [teste] Progress: Exporting /teste
+[2019-06-08 7:42:28 PM] [Folder] [_catalogs] Progress: Exporting /teste/_catalogs
+[2019-06-08 7:42:28 PM] [Folder] [design] Progress: Exporting /teste/_catalogs/design
+[2019-06-08 7:42:28 PM] [Folder] [Attachments] Progress: Exporting /teste/_catalogs/design/Attachments
+[2019-06-08 7:42:28 PM] [Folder] [masterpage] Progress: Exporting /teste/_catalogs/masterpage
+[2019-06-08 7:42:28 PM] [Folder] [Forms] Progress: Exporting /teste/_catalogs/masterpage/Forms
+[2019-06-08 7:42:28 PM] [Folder] [Document] Progress: Exporting /teste/_catalogs/masterpage/Forms/Document
+[2019-06-08 7:42:28 PM] [Folder] [MasterPage] Progress: Exporting /teste/_catalogs/masterpage/Forms/MasterPage
+[2019-06-08 7:42:28 PM] [Folder] [_private] Progress: Exporting /teste/_private
+[2019-06-08 7:42:28 PM] [Folder] [Documentos Compartilhados] Progress: Exporting /teste/Documentos Compartilhados
+[2019-06-08 7:42:28 PM] [Folder] [Forms] Progress: Exporting /teste/Documentos Compartilhados/Forms
+[2019-06-08 7:42:28 PM] [Folder] [Document] Progress: Exporting /teste/Documentos Compartilhados/Forms/Document
+[2019-06-08 7:42:28 PM] [Folder] [images] Progress: Exporting /teste/images
+[2019-06-08 7:42:28 PM] [Folder] [Lists] Progress: Exporting /teste/Lists
+[2019-06-08 7:42:28 PM] [Folder] [teste] Progress: Exporting /teste/Lists/teste
+[2019-06-08 7:42:28 PM] [Folder] [Attachments] Progress: Exporting /teste/Lists/teste/Attachments
+[2019-06-08 7:42:28 PM] [Folder] [Item] Progress: Exporting /teste/Lists/teste/Item
+[2019-06-08 7:42:28 PM] [Folder] [m] Progress: Exporting /teste/m
+[2019-06-08 7:42:28 PM] [Folder] [SiteAssets] Progress: Exporting /teste/SiteAssets
+[2019-06-08 7:42:28 PM] [Folder] [Forms] Progress: Exporting /teste/SiteAssets/Forms
+[2019-06-08 7:42:28 PM] [Folder] [Document] Progress: Exporting /teste/SiteAssets/Forms/Document
+[2019-06-08 7:42:28 PM] [Folder] [SitePages] Progress: Exporting /teste/SitePages
+[2019-06-08 7:42:28 PM] [Folder] [Forms] Progress: Exporting /teste/SitePages/Forms
+[2019-06-08 7:42:28 PM] [Folder] [Página de Web Parts] Progress: Exporting /teste/SitePages/Forms/Página de Web Parts
+[2019-06-08 7:42:28 PM] Progress: Finished processing objects of type Folder.
+[2019-06-08 7:42:28 PM] Progress: Starting to process objects of type File.
+[2019-06-08 7:42:28 PM] [File] [AllItems.aspx] Progress: Exporting File /teste/_catalogs/design/AllItems.aspx.
+[2019-06-08 7:42:28 PM] [File] [AllItems.aspx]   Verbose: Exporting Web Part $Resources:core,designgalleryList_AllItemsView;
+[2019-06-08 7:42:28 PM] [File] [AllItems.aspx]   ExtendedVerbose: Web Part type information: Microsoft.SharePoint.dll v4.0.30319
+[2019-06-08 7:42:28 PM] [File] [DispForm.aspx] Progress: Exporting File /teste/_catalogs/design/DispForm.aspx.
+[2019-06-08 7:42:28 PM] [File] [DispForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:28 PM] [File] [DispForm.aspx]   ExtendedVerbose: Web Part type information: Microsoft.SharePoint.dll v4.0.30319
+[2019-06-08 7:42:28 PM] [File] [EditForm.aspx] Progress: Exporting File /teste/_catalogs/design/EditForm.aspx.
+[2019-06-08 7:42:28 PM] [File] [EditForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:28 PM] [File] [Thumbnail.aspx] Progress: Exporting File /teste/_catalogs/design/Thumbnail.aspx.
+[2019-06-08 7:42:28 PM] [File] [Thumbnail.aspx]   Verbose: Exporting Web Part $Resources:core,designgalleryList_ThumbnailView;
+[2019-06-08 7:42:28 PM] [File] [Upload.aspx] Progress: Exporting File /teste/_catalogs/design/Upload.aspx.
+[2019-06-08 7:42:28 PM] [File] [Upload.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:28 PM] [File] [AllItems.aspx] Progress: Exporting File /teste/_catalogs/masterpage/Forms/AllItems.aspx.
+[2019-06-08 7:42:28 PM] [File] [AllItems.aspx]   Verbose: Exporting Web Part $Resources:,mplib_schema_allmasterpages;
+[2019-06-08 7:42:28 PM] [File] [AllItems.aspx]   ExtendedVerbose: Web Part type information: Microsoft.SharePoint.dll v4.0.30319
+[2019-06-08 7:42:28 PM] [File] [DispForm.aspx] Progress: Exporting File /teste/_catalogs/masterpage/Forms/DispForm.aspx.
+[2019-06-08 7:42:28 PM] [File] [DispForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:28 PM] [File] [EditForm.aspx] Progress: Exporting File /teste/_catalogs/masterpage/Forms/EditForm.aspx.
+[2019-06-08 7:42:28 PM] [File] [EditForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:28 PM] [File] [Upload.aspx] Progress: Exporting File /teste/_catalogs/masterpage/Forms/Upload.aspx.
+[2019-06-08 7:42:28 PM] [File] [Upload.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:28 PM] [File] [default.aspx] Progress: Exporting File /teste/default.aspx.
+[2019-06-08 7:42:28 PM] [File] [AllItems.aspx] Progress: Exporting File /teste/Documentos Compartilhados/Forms/AllItems.aspx.
+[2019-06-08 7:42:28 PM] [File] [AllItems.aspx]   Verbose: Exporting Web Part $Resources:core,All_Documents;
+[2019-06-08 7:42:28 PM] [File] [Combine.aspx] Progress: Exporting File /teste/Documentos Compartilhados/Forms/Combine.aspx.
+[2019-06-08 7:42:28 PM] [File] [Combine.aspx]   Verbose: Exporting Web Part $Resources:core,Merge_Documents;
+[2019-06-08 7:42:28 PM] [File] [DispForm.aspx] Progress: Exporting File /teste/Documentos Compartilhados/Forms/DispForm.aspx.
+[2019-06-08 7:42:28 PM] [File] [DispForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:28 PM] [File] [EditForm.aspx] Progress: Exporting File /teste/Documentos Compartilhados/Forms/EditForm.aspx.
+[2019-06-08 7:42:28 PM] [File] [EditForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:28 PM] [File] [repair.aspx] Progress: Exporting File /teste/Documentos Compartilhados/Forms/repair.aspx.
+[2019-06-08 7:42:28 PM] [File] [repair.aspx]   Verbose: Exporting Web Part $Resources:core,Relink_Documents;
+[2019-06-08 7:42:28 PM] [File] [template.dotx] Progress: Exporting File /teste/Documentos Compartilhados/Forms/template.dotx.
+[2019-06-08 7:42:29 PM] [File] [Thumbnails.aspx] Progress: Exporting File /teste/Documentos Compartilhados/Forms/Thumbnails.aspx.
+[2019-06-08 7:42:29 PM] [File] [Thumbnails.aspx]   Verbose: Exporting Web Part assetLibTemp
+[2019-06-08 7:42:29 PM] [File] [Upload.aspx] Progress: Exporting File /teste/Documentos Compartilhados/Forms/Upload.aspx.
+[2019-06-08 7:42:29 PM] [File] [Upload.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [GettingStarted.aspx] Progress: Exporting File /teste/GettingStarted.aspx.
+[2019-06-08 7:42:29 PM] [File] [GettingStarted.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [GettingStarted.aspx]   ExtendedVerbose: Web Part type information: Microsoft.SharePoint.dll v4.0.30319
+[2019-06-08 7:42:29 PM] [File] [AllItems.aspx] Progress: Exporting File /teste/Lists/teste/AllItems.aspx.
+[2019-06-08 7:42:29 PM] [File] [AllItems.aspx]   Verbose: Exporting Web Part $Resources:core,objectiv_schema_mwsidcamlidC24;
+[2019-06-08 7:42:29 PM] [File] [DispForm.aspx] Progress: Exporting File /teste/Lists/teste/DispForm.aspx.
+[2019-06-08 7:42:29 PM] [File] [DispForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [EditForm.aspx] Progress: Exporting File /teste/Lists/teste/EditForm.aspx.
+[2019-06-08 7:42:29 PM] [File] [EditForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [NewForm.aspx] Progress: Exporting File /teste/Lists/teste/NewForm.aspx.
+[2019-06-08 7:42:29 PM] [File] [NewForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [default.aspx] Progress: Exporting File /teste/m/default.aspx.
+[2019-06-08 7:42:29 PM] [File] [AllItems.aspx] Progress: Exporting File /teste/SiteAssets/Forms/AllItems.aspx.
+[2019-06-08 7:42:29 PM] [File] [AllItems.aspx]   Verbose: Exporting Web Part $Resources:core,All_Documents;
+[2019-06-08 7:42:29 PM] [File] [Combine.aspx] Progress: Exporting File /teste/SiteAssets/Forms/Combine.aspx.
+[2019-06-08 7:42:29 PM] [File] [Combine.aspx]   Verbose: Exporting Web Part $Resources:core,Merge_Documents;
+[2019-06-08 7:42:29 PM] [File] [DispForm.aspx] Progress: Exporting File /teste/SiteAssets/Forms/DispForm.aspx.
+[2019-06-08 7:42:29 PM] [File] [DispForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [EditForm.aspx] Progress: Exporting File /teste/SiteAssets/Forms/EditForm.aspx.
+[2019-06-08 7:42:29 PM] [File] [EditForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [repair.aspx] Progress: Exporting File /teste/SiteAssets/Forms/repair.aspx.
+[2019-06-08 7:42:29 PM] [File] [repair.aspx]   Verbose: Exporting Web Part $Resources:core,Relink_Documents;
+[2019-06-08 7:42:29 PM] [File] [template.doc] Progress: Exporting File /teste/SiteAssets/Forms/template.doc.
+[2019-06-08 7:42:29 PM] [File] [Thumbnails.aspx] Progress: Exporting File /teste/SiteAssets/Forms/Thumbnails.aspx.
+[2019-06-08 7:42:29 PM] [File] [Thumbnails.aspx]   Verbose: Exporting Web Part assetLibTemp
+[2019-06-08 7:42:29 PM] [File] [Upload.aspx] Progress: Exporting File /teste/SiteAssets/Forms/Upload.aspx.
+[2019-06-08 7:42:29 PM] [File] [Upload.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [AllPages.aspx] Progress: Exporting File /teste/SitePages/Forms/AllPages.aspx.
+[2019-06-08 7:42:29 PM] [File] [AllPages.aspx]   Verbose: Exporting Web Part $Resources:core,WikiAllPages;
+[2019-06-08 7:42:29 PM] [File] [ByAuthor.aspx] Progress: Exporting File /teste/SitePages/Forms/ByAuthor.aspx.
+[2019-06-08 7:42:29 PM] [File] [ByAuthor.aspx]   Verbose: Exporting Web Part $Resources:core,WikiByAuthor;
+[2019-06-08 7:42:29 PM] [File] [ByEditor.aspx] Progress: Exporting File /teste/SitePages/Forms/ByEditor.aspx.
+[2019-06-08 7:42:29 PM] [File] [ByEditor.aspx]   Verbose: Exporting Web Part $Resources:core,WikiByEditor;
+[2019-06-08 7:42:29 PM] [File] [CreatedByMe.aspx] Progress: Exporting File /teste/SitePages/Forms/CreatedByMe.aspx.
+[2019-06-08 7:42:29 PM] [File] [CreatedByMe.aspx]   Verbose: Exporting Web Part $Resources:core,WikiCreatedByMe;
+[2019-06-08 7:42:29 PM] [File] [DispForm.aspx] Progress: Exporting File /teste/SitePages/Forms/DispForm.aspx.
+[2019-06-08 7:42:29 PM] [File] [DispForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [EditForm.aspx] Progress: Exporting File /teste/SitePages/Forms/EditForm.aspx.
+[2019-06-08 7:42:29 PM] [File] [EditForm.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [RecentChanges.aspx] Progress: Exporting File /teste/SitePages/Forms/RecentChanges.aspx.
+[2019-06-08 7:42:29 PM] [File] [RecentChanges.aspx]   Verbose: Exporting Web Part $Resources:core,WikiRecentChanges;
+[2019-06-08 7:42:29 PM] [File] [Upload.aspx] Progress: Exporting File /teste/SitePages/Forms/Upload.aspx.
+[2019-06-08 7:42:29 PM] [File] [Upload.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] Progress: Finished processing objects of type File.
+[2019-06-08 7:42:29 PM] Progress: Starting to process objects of type List.
+[2019-06-08 7:42:29 PM] [List] [design] Progress: Exporting List Aparências compostas.
+[2019-06-08 7:42:29 PM] [List] [masterpage] Progress: Exporting List Galeria de Páginas Mestras.
+[2019-06-08 7:42:29 PM] [List] [Documentos Compartilhados] Progress: Exporting List Documentos.
+[2019-06-08 7:42:29 PM] [List] [teste] Progress: Exporting List teste.
+[2019-06-08 7:42:29 PM] [List] [SiteAssets] Progress: Exporting List Ativos do Site.
+[2019-06-08 7:42:29 PM] [List] [SitePages] Progress: Exporting List Páginas do Site.
+[2019-06-08 7:42:29 PM] Progress: Finished processing objects of type List.
+[2019-06-08 7:42:29 PM] Progress: Starting to process objects of type DocLibFile.
+[2019-06-08 7:42:29 PM] [File] [minimal.master] Progress: Exporting File /teste/_catalogs/masterpage/minimal.master.
+[2019-06-08 7:42:29 PM] [File] [oslo.master] Progress: Exporting File /teste/_catalogs/masterpage/oslo.master.
+[2019-06-08 7:42:29 PM] [File] [oslo.preview] Progress: Exporting File /teste/_catalogs/masterpage/oslo.preview.
+[2019-06-08 7:42:29 PM] [File] [seattle.master] Progress: Exporting File /teste/_catalogs/masterpage/seattle.master.
+[2019-06-08 7:42:29 PM] [File] [seattle.preview] Progress: Exporting File /teste/_catalogs/masterpage/seattle.preview.
+[2019-06-08 7:42:29 PM] [File] [v4.master] Progress: Exporting File /teste/_catalogs/masterpage/v4.master.
+[2019-06-08 7:42:29 PM] [File] [Como Usar esta Biblioteca.aspx] Progress: Exporting File /teste/SitePages/Como Usar esta Biblioteca.aspx.
+[2019-06-08 7:42:29 PM] [File] [Página Inicial.aspx] Progress: Exporting File /teste/SitePages/Página Inicial.aspx.
+[2019-06-08 7:42:29 PM] [File] [Página Inicial.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [Página Inicial.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [Página Inicial.aspx]   Verbose: Exporting Web Part 
+[2019-06-08 7:42:29 PM] [File] [Página Inicial.aspx]   ExtendedVerbose: Web Part type information: Microsoft.SharePoint.dll v4.0.30319
+[2019-06-08 7:42:29 PM] Progress: Finished processing objects of type DocLibFile.
+[2019-06-08 7:42:29 PM] Progress: Starting to process objects of type ListItem.
+[2019-06-08 7:42:29 PM] [ListItem] [minimal.master] Progress: Exporting ListItem teste/_catalogs/masterpage?id=2.
+[2019-06-08 7:42:29 PM] [ListItem] [oslo.master] Progress: Exporting ListItem teste/_catalogs/masterpage?id=4.
+[2019-06-08 7:42:29 PM] [ListItem] [oslo.preview] Progress: Exporting ListItem teste/_catalogs/masterpage?id=6.
+[2019-06-08 7:42:29 PM] [ListItem] [seattle.master] Progress: Exporting ListItem teste/_catalogs/masterpage?id=3.
+[2019-06-08 7:42:29 PM] [ListItem] [seattle.preview] Progress: Exporting ListItem teste/_catalogs/masterpage?id=5.
+[2019-06-08 7:42:29 PM] [ListItem] [v4.master] Progress: Exporting ListItem teste/_catalogs/masterpage?id=1.
+[2019-06-08 7:42:30 PM] [ListItem] [1_.000] Progress: Exporting ListItem teste/Lists/teste?id=1.
+[2019-06-08 7:42:30 PM] [ListItem] [2_.000] Progress: Exporting ListItem teste/Lists/teste?id=2.
+[2019-06-08 7:42:30 PM] [ListItem] [1_.000] Progress: Exporting ListItem teste/_catalogs/design?id=1.
+[2019-06-08 7:42:30 PM] [ListItem] [10_.000] Progress: Exporting ListItem teste/_catalogs/design?id=10.
+[2019-06-08 7:42:30 PM] [ListItem] [11_.000] Progress: Exporting ListItem teste/_catalogs/design?id=11.
+[2019-06-08 7:42:30 PM] [ListItem] [12_.000] Progress: Exporting ListItem teste/_catalogs/design?id=12.
+[2019-06-08 7:42:30 PM] [ListItem] [13_.000] Progress: Exporting ListItem teste/_catalogs/design?id=13.
+[2019-06-08 7:42:30 PM] [ListItem] [14_.000] Progress: Exporting ListItem teste/_catalogs/design?id=14.
+[2019-06-08 7:42:30 PM] [ListItem] [15_.000] Progress: Exporting ListItem teste/_catalogs/design?id=15.
+[2019-06-08 7:42:30 PM] [ListItem] [16_.000] Progress: Exporting ListItem teste/_catalogs/design?id=16.
+[2019-06-08 7:42:30 PM] [ListItem] [17_.000] Progress: Exporting ListItem teste/_catalogs/design?id=17.
+[2019-06-08 7:42:30 PM] [ListItem] [18_.000] Progress: Exporting ListItem teste/_catalogs/design?id=18.
+[2019-06-08 7:42:30 PM] [ListItem] [2_.000] Progress: Exporting ListItem teste/_catalogs/design?id=2.
+[2019-06-08 7:42:30 PM] [ListItem] [3_.000] Progress: Exporting ListItem teste/_catalogs/design?id=3.
+[2019-06-08 7:42:30 PM] [ListItem] [4_.000] Progress: Exporting ListItem teste/_catalogs/design?id=4.
+[2019-06-08 7:42:30 PM] [ListItem] [5_.000] Progress: Exporting ListItem teste/_catalogs/design?id=5.
+[2019-06-08 7:42:30 PM] [ListItem] [6_.000] Progress: Exporting ListItem teste/_catalogs/design?id=6.
+[2019-06-08 7:42:30 PM] [ListItem] [7_.000] Progress: Exporting ListItem teste/_catalogs/design?id=7.
+[2019-06-08 7:42:30 PM] [ListItem] [8_.000] Progress: Exporting ListItem teste/_catalogs/design?id=8.
+[2019-06-08 7:42:30 PM] [ListItem] [9_.000] Progress: Exporting ListItem teste/_catalogs/design?id=9.
+[2019-06-08 7:42:30 PM] [ListItem] [Como Usar esta Biblioteca.aspx] Progress: Exporting ListItem teste/SitePages?id=2.
+[2019-06-08 7:42:30 PM] [ListItem] [Página Inicial.aspx] Progress: Exporting ListItem teste/SitePages?id=1.
+[2019-06-08 7:42:30 PM] Progress: Finished processing objects of type ListItem.
+[2019-06-08 7:42:30 PM] Progress: Starting to process objects of type Roles.
+[2019-06-08 7:42:30 PM] Progress: Finished processing objects of type Roles.
+[2019-06-08 7:42:30 PM] Progress: Starting to process objects of type RoleAssignments.
+[2019-06-08 7:42:30 PM] Progress: Finished processing objects of type RoleAssignments.
+[2019-06-08 7:42:30 PM] Progress: Starting to process objects of type WebStructure.
+[2019-06-08 7:42:30 PM] Progress: Finished processing objects of type WebStructure.
+[2019-06-08 7:42:30 PM] Progress: Starting to process objects of type Feature.
+[2019-06-08 7:42:30 PM] [Feature] [DataSourceLibrary] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [DiscussionsList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [ContactsList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [CustomList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [AnnouncementsList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [GanttTasksList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [GridList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [HierarchyTasksList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [ExternalList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [DocumentLibrary] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [EventsList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [IssuesList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [LinksList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [PictureLibrary] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [WorkflowHistoryList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [WebPageLibrary] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [NoCodeWorkflowLibrary] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [PromotedLinksList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [XmlFormLibrary] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [SurveysList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [workflowProcessList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [TasksList] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [TeamCollab] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [MobilityRedirect] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [WikiPageHomePage] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [GettingStarted] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [MDSFeature] Progress: Exporting
+[2019-06-08 7:42:30 PM] [Feature] [MBrowserRedirect] Progress: Exporting
+[2019-06-08 7:42:30 PM] Progress: Finished processing objects of type Feature.
+[2019-06-08 7:42:30 PM] Debug: <?xml version="1.0" encoding="utf-16"?>
+<ExportSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SiteUrl="http://usjp-v09/" FileLocation="c:\BKP_" BaseFileName="SPWeb-USJP-teste.cmp" IncludeSecurity="None" IncludeVersions="LastMajor" ExportPublicSchema="true" ExportFrontEndFileStreams="true" ExportMethod="ExportAll" ExcludeDependencies="true" xmlns="urn:deployment-exportsettings-schema">
+  <ExportObjects>
+    <DeploymentObject Id="f4c00095-bbcb-4ab2-ba05-69b13c0c433d" Type="Web" ParentId="00000000-0000-0000-0000-000000000000" Url="/teste" ExcludeChildren="false" IncludeDescendants="All" />
+  </ExportObjects>
+</ExportSettings>
+[2019-06-08 7:42:30 PM] Progress: Exporting Group Proprietários do Intranet USJP.
+[2019-06-08 7:42:30 PM] Progress: Exporting Group Visitantes da Intranet USJP.
+[2019-06-08 7:42:30 PM] Progress: Exporting Group Membros de Intranet USJP.
+[2019-06-08 7:42:30 PM] Progress: Creating File(s).
+[2019-06-08 7:42:30 PM] Progress: Compressing File(s).
+[2019-06-08 7:42:31 PM] Progress: Export completed.
+[2019-06-08 7:42:31 PM] Finish Time: 2019-06-08 7:42:31 PM.
+[2019-06-08 7:42:31 PM] Duration: 00:00:04
+[2019-06-08 7:42:31 PM] Total Objects: 131
+[2019-06-08 7:42:31 PM] Finished with 1 warnings.
+[2019-06-08 7:42:31 PM] Finished with 0 errors.

@@ -1,0 +1,66 @@
+<!-- HTML APPS CORPORATIVOS -->
+<div id="dvCorp" ng-app="appCorp" >
+    <div class="box box-solid" ng-controller="myCtrlCorp">
+        <div class="box-header with-border bg-primary">
+          <i class="fa fa-th"></i>
+            <h3 class="box-title">Apps Corporativos</h3>
+
+          <div class="box-tools">
+            <button type="button" class="btn btn-box-tool btn-app-corp" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+          </div>
+          <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div  ng-repeat="app in records">
+            <a href="{{app.URL}}" target="_blank">
+                <div class="bloco-app-corp bg-primary">
+                    <span class="icon-app-col"><img src="{{app.Icon}}" style="border:0px"/ title="{{app.Name}}" alt="{{app.Name}}"></span>
+                    <span class="text-app-col">{{app.Name}}</span>
+                </div>
+            </a> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- HTML APPS CORPORATIVOS -->
+
+<!--SCRIPTS APPS CORPORATIVOS -->
+<script>
+$("#dvCorp").hide();
+$( document ).ready(function() {
+   var appCorp = angular.module("appCorp", []);
+   
+   appCorp.controller("myCtrlCorp", function($scope) { 
+
+        $SP().list("Aplicativos").get({
+        fields:"ID, Title, URL, Icon",
+        orderby:"Title DESC"
+        }).then (function(data) {
+            
+           corp = '[';    
+           for(i=0; i<data.length; i++){
+               if (i<(data.length-1)){
+                   corp+= '{"ID":"'+ data[i].getAttribute("ID") +'","Name":"'+ data[i].getAttribute("Title") +'", "Icon":"'+ data[i].getAttribute("Icon") +'", "URL":"'+ data[i].getAttribute("URL")+'"},';
+               }else{
+                   corp+= '{"ID":"'+ data[i].getAttribute("ID") +'","Name":"'+ data[i].getAttribute("Title") +'", "Icon":"'+ data[i].getAttribute("Icon") +'", "URL":"'+ data[i].getAttribute("URL")+'"}';
+               }
+           }
+           corp += ']'; 
+           console.log('corp:'+ corp);
+           localStorage.setItem("Aplicativos",corp);
+
+        });
+
+        $scope.records = JSON.parse(localStorage.getItem("Aplicativos"));
+   });
+    var dvCorp = document.getElementById('dvCorp');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvCorp, ['appCorp']);
+        $("#dvCorp").fadeIn();
+    }); 
+}); 
+
+</script>
+<!--SCRIPTS APPS CORPORATIVOS -->

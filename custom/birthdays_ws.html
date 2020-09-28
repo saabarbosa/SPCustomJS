@@ -1,0 +1,44 @@
+﻿<!-- HTML BIRTHDAYS -->
+
+<div class="box box-solid">
+    <div class="box-header with-border bg-primary">
+      <i class="fa fa-newspaper-o"></i>
+      <h3 class="box-title">Aniversariantes do dia</h3>
+
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body" id="dvAniversariante">
+      <ul class="products-list product-list-in-box">
+        <li class="item">
+          <div>
+		<div id="nivers"></div>
+          </div>
+        </li>
+      </ul>
+    </div>            
+</div>
+
+<!-- HTML BIRTHDAYS -->
+
+<!-- SCRIPT BIRTHDAYS -->
+
+<script>
+
+
+$( document ).ready(function() {
+
+  var niverAPI = "http://usjp-v09:89/api/aniversariantes/?dia=1&mes=1";
+  $.getJSON( niverAPI, function(data) {
+	console.log(data);
+	var obj = JSON.parse(data);
+	for(i=0; i<obj.length; i++){
+		$("#nivers").append("<strong>"+ obj[i].Nome +"</strong><br>" + obj[i].Setor + "</br><hr>");
+	}
+
+  });
+
+
+}); 
+
+</script>
+<!-- SCRIPT BIRTHDAYS -->

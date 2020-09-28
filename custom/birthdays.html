@@ -1,0 +1,89 @@
+﻿<!-- news -->
+
+<div class="box box-solid">
+    <div class="box-header with-border bg-primary">
+      <i class="fa fa-newspaper-o"></i>
+      <h3 class="box-title">Aniversariantes</h3>
+      <!--<div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+      </div>-->
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body" id="dvAniversariante" ng-app="appNiver">
+      <ul class="products-list product-list-in-box"  ng-controller="ctrlNiver">
+        <li class="item" ng-repeat="new in records">
+          <div class="product-img">
+            <img src="{{new.Imagem}}" alt=""/>
+          </div>
+          <div class="product-info">
+            <a href="#" class="product-title color-888">{{new.Title}}</a>
+              <span class="label pull-right color-888">{{new.Data}}</span>
+            <span class="product-description">
+                  {{new.Cargo}}
+                </span>
+          </div>
+        </li>
+        <li>
+            
+            <span class="label pull-right color-888" style="padding-top: 5px"><a class="btn btn-xs" href="https://i9ticombr.sharepoint.com/sites/projeto/Lists/Funcionario/AllItems.aspx">ver todos</a></span>
+        </li>
+      </ul>
+    </div>            
+</div>
+
+
+<!-- news -->
+<script>
+$( document ).ready(function() {
+   var appNiver = angular.module("appNiver", []);   
+   appNiver.controller("ctrlNiver", function($scope) { 
+
+        $SP().list("Aniversariantes").get({
+        fields:"ID, Title, Imagem, Cargo",
+        rowlimit: "5",
+        orderby:"ID DESC"
+        }).then (function(data) {
+
+           niver = '[';    
+           for(i=0; i<data.length; i++){
+               var startDate = new Date(data[i].getAttribute("Created"));
+               var year = startDate.getFullYear() + "";
+               var month = (startDate.getMonth() + 1) + "";
+               var day = startDate.getDate() + "";
+               var dateFormat = day + "-" + month + "-" + year;
+               
+               
+               if (i<(data.length-1)){
+                   niver+= '{"ID":"'+ data[i].getAttribute("ID") +'","Title":"'+ data[i].getAttribute("Title") +'","Cargo":"'+ data[i].getAttribute("Cargo")+ '","Imagem":"'+ data[i].getAttribute("Imagem") + '","Data":"'+ dateFormat +'"},';
+               }else{
+                   niver+= '{"ID":"'+ data[i].getAttribute("ID") +'","Title":"'+ data[i].getAttribute("Title") +'","Cargo":"'+ data[i].getAttribute("Cargo")+ '","Imagem":"'+ data[i].getAttribute("Imagem") + '","Data":"'+ dateFormat +'"}';
+               }
+           }
+           niver += ']'; 
+
+           localStorage.setItem("Aniversariantes",niver);
+
+        });
+
+       $scope.records = JSON.parse(localStorage.getItem("Aniversariantes"));
+   });
+    var dvAniversariante = document.getElementById('dvAniversariante');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvAniversariante, ['appNiver']);
+    }); 
+}); 
+
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>

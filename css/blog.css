@@ -1,0 +1,39 @@
+﻿.ms-blog-adminLinks {
+	 margin-top: 50px;
+	 background-color: #efefef;
+	 background-color: #f1f1f1;
+	 padding: 9px 14px 10px 14px;
+	 min-width: 370px;
+	 display: inline-block;
+	 margin-bottom: 6px;
+	 margin-left: 350px !important;
+}
+
+.ms-blog-postBox {
+	 margin-top: 50px;
+	 padding: 2px;
+	 padding-left: 0px;
+	 border: 1px solid #ababab;
+	 border-radius: 2px;
+	 overflow: visible;
+	 background-color: rgba( 255,255,255,0.85 );
+	 width: 1000px !important;
+}
+    
+.ms-blog-aboutImage {
+    width: 198px;
+    text-align: center;
+    MARGIN-LEFT: 350px !important;
+}
+
+.ms-blog-postBoxDate {
+    color: #fff;
+    background-color: #0072c6;
+    width: 77px;
+    height: 51px !important;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0067b0;
+    float: left;
+    text-align: center;
+}

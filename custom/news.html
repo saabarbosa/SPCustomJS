@@ -1,0 +1,81 @@
+﻿<!-- HTML NOTICIAS -->
+
+<div class="box box-solid">
+    <div class="box-header with-border bg-primary">
+      <i class="fa fa-newspaper-o"></i>
+      <h3 class="box-title">Notí­cias</h3>
+      <!--<div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+      </div>-->
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body" id="dvNoticias" ng-app="appNews">
+      <ul class="products-list product-list-in-box"  ng-controller="ctrlNews">
+        <li class="item" ng-repeat="new in records">
+          <div class="product-img">
+            <img src="{{new.Imagem}}" alt=""/>
+          </div>
+          <div class="product-info">
+            <a href="/Lists/Noticias/ExibirNoticia.aspx?ID={{new.ID}}&Source=/SitePages/inicio.aspx" class="product-title color-888">{{new.Title}}</a>
+              <span class="label pull-right color-888">{{new.Data}}</span>
+            <span class="product-description">
+                  {{new.Resumo}}
+                </span>
+          </div>
+        </li>
+<!--
+        <li>
+            
+            <span class="label pull-right color-888" style="padding-top: 5px"><a class="btn btn-xs" href="/Lists/Noticias/Noticias.aspx">mais notí­cias</a></span>
+        </li>
+-->
+      </ul>
+    </div>            
+</div>
+
+<!-- HTML NOTICIAS -->
+<!-- SCRIPT NOTICIAS -->
+    
+<script>
+$( document ).ready(function() {  
+   var appNews = angular.module("appNews", []);
+   appNews.controller("ctrlNews", function($scope) { 
+
+        $SP().list("Noticias").get({
+        fields:"ID, Title, Resumo, Imagem, Conteudo, DataAtual, Created",
+        rowlimit: "5",
+        orderby:"ID DESC"
+        }).then (function(data) {
+
+           noticia = '[';    
+           for(i=0; i<data.length; i++){
+               var startDate = new Date(data[i].getAttribute("DataAtual"));
+               var year = startDate.getFullYear() + "";
+               var month = (startDate.getMonth() + 1) + "";
+               var day = startDate.getDate() + "";
+               var dateFormat = day + "-" + month + "-" + year;
+               
+               
+               if (i<(data.length-1)){
+                   noticia+= '{"ID":"'+ data[i].getAttribute("ID") +'","Title":"'+ data[i].getAttribute("Title") +'","Resumo":"'+ data[i].getAttribute("Resumo")+ '","Imagem":"'+ data[i].getAttribute("Imagem") + '","Data":"'+ dateFormat +'"},';
+               }else{
+                   noticia+= '{"ID":"'+ data[i].getAttribute("ID") +'","Title":"'+ data[i].getAttribute("Title") +'","Resumo":"'+ data[i].getAttribute("Resumo")+ '","Imagem":"'+ data[i].getAttribute("Imagem") + '","Data":"'+ dateFormat +'"}';
+               }
+           }
+           noticia += ']'; 
+
+           localStorage.setItem("Noticias",noticia);
+
+        });
+
+        $scope.records = JSON.parse(localStorage.getItem("Noticias"));
+   });
+    var dvNoticias = document.getElementById('dvNoticias');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvNoticias, ['appNews']);
+    });
+});
+</script>
+<!-- SCRIPT NOTICIAS -->

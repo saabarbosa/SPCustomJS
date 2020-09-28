@@ -1,0 +1,155 @@
+﻿@font-face {
+font-family: 'Segoe UI';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI'), url('segoeui.woff') format('woff');
+}
+
+.ms-webpartzone-cell {
+ margin: auto auto 0 !important;
+}
+
+.content {
+    min-height: 250px;
+    padding: 7px !important;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2px !important;
+    padding-right: 0px !important;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px !important;
+}
+
+/* BANNER */
+
+.carousel {
+	margin-bottom: 20px !important;
+}
+
+.carousel-inner > .item > img {
+	max-height: 300px !important;
+}
+
+.box-header.bg-primary {
+	color: #fff !important;
+}
+
+/* EVENTOS */
+
+.dt-evento {
+    width: 50px !important;
+    height: 50px !important; 
+    text-align: center !important;
+    padding-top: 7px !important;
+    font-size: 25px !important;
+}
+
+.info-evento {
+    margin-top: -6px !important;
+}
+
+.product-list-in-box > .item-evento {
+    border-bottom: 1px solid transparent !important;
+}
+
+/* APPS COLABORAÃ‡ÃƒO */
+
+.bloco-app-col {
+    width: 25%;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    float: left;
+    border-bottom: 1px solid #E9E9E9;
+    border-right: 1px solid #E9E9E9;
+}
+
+.bloco-app-col .icon-app-col {
+    display: block;
+    font-size: 25px;
+    padding-top: 15px;
+}
+
+.bloco-app-col .text-app-col {
+    display: block;
+    padding-top: 10px;
+}
+
+/* APPS CORPORATIVOS */
+
+.bloco-app-corp {
+    width: 12.5%;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    float: left;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.bloco-app-corp .icon-app-col {
+    display: block;
+    font-size: 25px;
+    padding-top: 15px;
+}
+
+.bloco-app-corp .text-app-col {
+    display: block;
+    padding-top: 10px;
+}
+
+.btn-box-tool.btn-app-corp {
+    padding: 0;
+    font-size: 20px !important;
+    color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .bloco-app-corp {
+    width: 25%;
+  }
+}
+
+/* NOTÃCIAS COMUNIDADES */
+
+.bloco-not-com {
+    display: block;
+    float: left;
+    min-height: 1px;
+    width: 33.33333333%;
+}
+
+.img-com {
+    width: 100%;
+    height: 180px;
+    background-color: #333;
+}
+
+.img-com img {
+    width: 100%;
+    height: 180px;
+}
+
+.not-com {
+    padding: 20px;
+    width: 100%;
+    height: 180px;
+    color: #fff !important;
+}
+
+.not-com .tit-not-com {
+    font-weight: 600;
+    padding-top: 30px;
+    display: block;
+} 
+
+.not-com .desc-not-com {
+    padding-top: 20px;
+    display: block;
+}
+
+.not-com .data-not-com {
+    display: block;
+}

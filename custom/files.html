@@ -1,0 +1,88 @@
+﻿<!-- files -->
+
+<div class="box box-solid">
+    <div class="box-header with-border bg-primary">
+      <i class="fa fa-file"></i>
+      <h3 class="box-title">Documentos</h3>
+      <!--<div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+      </div>-->
+    </div>
+    <!-- /.box-header -->
+
+    <div class="box-body" id="dvFiles" ng-app="appFiles">
+      <ul class="products-list product-list-in-box" ng-controller="myCtrlFiles">
+        <li class="item" ng-repeat="doc in records">
+          <div class="product-ico">
+            <img src="{{doc.Ico}}" alt="">
+          </div>
+          <div class="product-info">
+            <a href="{{doc.URL}}" class="product-title color-888">{{doc.Name}}</a>
+              <span class="label pull-right color-888">{{doc.Data}}</span>
+            <span class="product-description">
+                  {{doc.Size}}
+                </span>
+          </div>
+        </li>
+        <!-- /.item -->
+      </ul>
+    </div>
+</div>
+
+<!-- files -->
+
+<script>
+ $("#dvFiles").hide();
+    
+$( document ).ready(function() {      
+   var appFiles = angular.module("appFiles", []);
+   appFiles.controller("myCtrlFiles", function($scope) { 
+
+        $SP().list("Arquivos").get({
+        fields:"Title, FileRef, ServerUrl, FileDirRef, LinkFilename, DocIcon, FileSizeDisplay, Modified",
+        orderby:"ID DESC"
+        }, function(data) {
+            
+           file = '[';    
+           for(i=0; i<data.length; i++){
+               var ico = '/_layouts/15/images/ic'+ data[i].getAttribute("DocIcon") + '.png';
+		       var size = Math.round(Number(data[i].getAttribute("FileSizeDisplay"))/1024) + 'kb';
+               if (i<(data.length-1)){
+                   file+= '{"ID":"'+ data[i].getAttribute("ID") +'","Ico":"'+ ico +'","Name":"'+ data[i].getAttribute("LinkFilename") +'","URL":"'+ data[i].getAttribute("ServerUrl") + '","Data":"'+ data[i].getAttribute("Modified") + '","Size":"'+ size+'"},';
+               }else{
+                   file+= '{"ID":"'+ data[i].getAttribute("ID") +'","Ico":"'+ ico +'","Name":"'+ data[i].getAttribute("LinkFilename") +'","URL":"'+ data[i].getAttribute("ServerUrl") + '","Data":"'+ data[i].getAttribute("Modified") + '","Size":"'+ size +'"}';
+               }
+           }
+           file += ']'; 
+           console.log('file:'+ file);
+           localStorage.setItem("Arquivos",file);
+
+        });
+
+        $scope.records = JSON.parse(localStorage.getItem("Arquivos"));
+   });
+    var dvFiles = document.getElementById('dvFiles');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvFiles, ['appFiles']);
+        $("#dvFiles").show();
+    }); 
+}); 
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingIsFurlPage msdt:dt="string">0</mso:PublishingIsFurlPage>
+<mso:PublishingContactPicture msdt:dt="string"></mso:PublishingContactPicture>
+<mso:PublishingRollupImage msdt:dt="string"></mso:PublishingRollupImage>
+<mso:Audience msdt:dt="string"></mso:Audience>
+<mso:PublishingContactName msdt:dt="string"></mso:PublishingContactName>
+<mso:Comments msdt:dt="string"></mso:Comments>
+<mso:PublishingContactEmail msdt:dt="string"></mso:PublishingContactEmail>
+<mso:DefaultCssFile msdt:dt="string"></mso:DefaultCssFile>
+<mso:MasterPageDescription msdt:dt="string"></mso:MasterPageDescription>
+<mso:UIVersion msdt:dt="string">;#15;#</mso:UIVersion>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>

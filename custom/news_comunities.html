@@ -1,0 +1,149 @@
+﻿<!-- COMUNIDADES -->
+<div id="dvNoticiasComunities" ng-app="appNewsComunities">
+    <!-- COMUNIDADES -->
+    <div ng-controller="ctrlNewsRH">
+
+        <div class="bloco-not-com" ng-repeat="new in records1">
+            <div class="img-com">
+                <img src="{{new.Imagem}}">
+            </div>
+            <a href="">
+            <div class="not-com bg-powerpoint">
+                <span class="data-not-com pull-right">{{new.Data}}</span>
+                <span class="label bg-opacity">RH</span>
+                <span class="tit-not-com">Not&iacute;cia da Comunidade</span>
+                <span class="desc-not-com">{{new.Titulo}}</span>
+            </div>
+            </a>
+        </div>
+        <div class="bloco-not-com" ng-repeat="new in records2">
+            <a href="">
+            <div class="not-com bg-onenote">
+                <span class="data-not-com pull-right">{{new.Data}}</span>
+                <span class="label bg-opacity">MKT</span>
+                <span class="tit-not-com">Not&iacute;cia da Comunidade</span>
+                <span class="desc-not-com">{{new.Titulo}}</span>
+            </div>
+            </a>
+            <div class="img-com">
+                <img src="{{new.Imagem}}">
+            </div>            
+        </div>
+
+        <div class="bloco-not-com margin-bottom-20" ng-repeat="new in records3">
+            <div class="img-com">
+                <img src="{{new.Imagem}}">
+            </div>
+            <a href="">
+            <div class="not-com bg-video">
+                <span class="data-not-com pull-right">{{new.Data}}</span>
+                <span class="label bg-opacity">TI</span>
+                <span class="tit-not-com">Not&iacute;cia da Comunidade</span>
+                <span class="desc-not-com">{{new.Titulo}}</span>
+            </div>
+            </a>
+        </div>
+        
+    </div>
+</div>
+<!-- COMUNIDADES -->
+
+<script>
+$("#dvNoticiasComunities").hide();
+$( document ).ready(function() {  
+   var appNewsComunities = angular.module("appNewsComunities", []);
+   appNewsComunities.controller("ctrlNewsRH", function($scope) { 
+        $SP().list("Noticias", "/sites/projeto/rh/").get({
+        fields:"ID, Title, Resumo, Imagem, Conteudo, Created",
+        rowlimit: "1",
+        orderby:"Created DESC"
+        }).then (function(data) {
+
+           noticia_rh = '[';    
+           if (data.length>0){
+                   var data_noticia = data[0].getAttribute("Created");
+                   var dia = data_noticia.substring(8,10);        
+                   var mes = data_noticia.substring(5,7);
+                   var ano = data_noticia.substring(0,4);
+               
+                   noticia_rh+= '{"ID":"'+ data[0].getAttribute("ID") +'","Titulo":"'+ data[0].getAttribute("Title") +'","Resumo":"'+ data[0].getAttribute("Resumo")+ '","Imagem":"'+ data[0].getAttribute("Imagem") + '","Data":"'+ dia + "/" + mes + "/" + ano +'"}';               
+           } else {
+               
+           }
+           noticia_rh += ']'; 
+           console.log('noticiaRH:'+ noticia_rh);
+           localStorage.setItem("NoticiasRH",noticia_rh);
+
+        });
+        $SP().list("Noticias", "/sites/projeto/mkt/").get({
+        fields:"ID, Title, Resumo, Imagem, Conteudo, Created",
+        rowlimit: "1",
+        orderby:"Created DESC"
+        }).then (function(data) {
+
+           noticia_mkt = '[';    
+           if (data.length>0){
+                   var data_noticia = data[0].getAttribute("Created");
+                   var dia = data_noticia.substring(8,10);        
+                   var mes = data_noticia.substring(5,7);
+                   var ano = data_noticia.substring(0,4);
+               
+                   noticia_mkt+= '{"ID":"'+ data[0].getAttribute("ID") +'","Titulo":"'+ data[0].getAttribute("Title") +'","Resumo":"'+ data[0].getAttribute("Resumo")+ '","Imagem":"'+ data[0].getAttribute("Imagem") + '","Data":"'+ dia + "/" + mes + "/" + ano +'"}';               
+           } else {
+               
+           }
+           noticia_mkt += ']'; 
+           console.log('noticiaMKT:'+ noticia_mkt);
+           localStorage.setItem("NoticiasMKT",noticia_mkt);
+
+        });     
+        $SP().list("Noticias", "/sites/projeto/ti").get({
+        fields:"ID, Title, Resumo, Imagem, Conteudo, Created",
+        rowlimit: "1",
+        orderby:"Created DESC"
+        }).then ( function(data) {
+
+           noticia_ti = '[';    
+           if (data.length>0){
+                   var data_noticia = data[0].getAttribute("Created");
+                   var dia = data_noticia.substring(8,10);        
+                   var mes = data_noticia.substring(5,7);
+                   var ano = data_noticia.substring(0,4);
+               
+                   noticia_ti+= '{"ID":"'+ data[0].getAttribute("ID") +'","Titulo":"'+ data[0].getAttribute("Title") +'","Resumo":"'+ data[0].getAttribute("Resumo")+ '","Imagem":"'+ data[0].getAttribute("Imagem") + '","Data":"'+ dia + "/" + mes + "/" + ano +'"}';               
+           } else {
+               
+           }
+           noticia_ti += ']'; 
+           console.log('noticiaTI:'+ noticia_ti);
+           localStorage.setItem("NoticiasTI",noticia_ti);
+
+        });          
+        $scope.records1 = JSON.parse(localStorage.getItem("NoticiasRH"));
+        $scope.records2 = JSON.parse(localStorage.getItem("NoticiasMKT"));
+        $scope.records3 = JSON.parse(localStorage.getItem("NoticiasTI"));
+   });
+   var dvNoticiasComunities = document.getElementById('dvNoticiasComunities');
+   angular.element(document).ready(function() {
+        angular.bootstrap(dvNoticiasComunities, ['appNewsComunities']);
+        $("#dvNoticiasComunities").fadeIn();
+   });
+   
+});
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingIsFurlPage msdt:dt="string">0</mso:PublishingIsFurlPage>
+<mso:PublishingContactPicture msdt:dt="string"></mso:PublishingContactPicture>
+<mso:PublishingRollupImage msdt:dt="string"></mso:PublishingRollupImage>
+<mso:Audience msdt:dt="string"></mso:Audience>
+<mso:PublishingContactName msdt:dt="string"></mso:PublishingContactName>
+<mso:Comments msdt:dt="string"></mso:Comments>
+<mso:PublishingContactEmail msdt:dt="string"></mso:PublishingContactEmail>
+<mso:DefaultCssFile msdt:dt="string"></mso:DefaultCssFile>
+<mso:MasterPageDescription msdt:dt="string"></mso:MasterPageDescription>
+<mso:UIVersion msdt:dt="string">;#15;#</mso:UIVersion>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>

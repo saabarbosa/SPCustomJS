@@ -1,0 +1,70 @@
+
+<!-- ALERTA -->
+    <div id="dvAlert" ng-app="alertPopUp" >
+        <div ng-controller="myCtrlAlert">
+            <div class="alert alert-warning alert-dismissible alerta" ng-repeat="alert in records">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-close"></i></button>
+            <h4><i class="icon fa fa-warning"></i> {{alert.Titulo}}</h4>
+            {{alert.Descricao}}
+            </div>
+        </div>
+    </div>
+  <!-- ALERTA -->
+
+
+<script>
+$("#dvAlert").hide();
+
+$( document ).ready(function() {
+   var alertPopUp = angular.module("alertPopUp", []);
+   
+   alertPopUp.controller("myCtrlAlert", function($scope) { 
+
+        $SP().list("Avisos").get({
+        fields:"ID, Title, Descricao",
+        rowlimit: "1",
+        orderby:"ID DESC"
+        }).then (function(data) {
+            
+           popUp = '[';    
+           for(i=0; i<data.length; i++){
+               if (i<(data.length-1)){
+                   popUp+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Descricao":"'+ data[i].getAttribute("Descricao")+'"},';
+               }else{
+                   popUp+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Descricao":"'+ data[i].getAttribute("Descricao")+'"}';
+               }
+           }
+           popUp += ']'; 
+           console.log('popUp:'+ popUp);
+           localStorage.setItem("Alert",popUp);
+
+        });
+
+        $scope.records = JSON.parse(localStorage.getItem("Alert"));
+   });
+    var dvAlert = document.getElementById('dvAlert');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvAlert, ['alertPopUp']);
+        $("#dvAlert").show();
+    }); 
+    
+
+}); 
+
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingIsFurlPage msdt:dt="string">0</mso:PublishingIsFurlPage>
+<mso:PublishingContactPicture msdt:dt="string"></mso:PublishingContactPicture>
+<mso:PublishingRollupImage msdt:dt="string"></mso:PublishingRollupImage>
+<mso:Audience msdt:dt="string"></mso:Audience>
+<mso:PublishingContactName msdt:dt="string"></mso:PublishingContactName>
+<mso:Comments msdt:dt="string"></mso:Comments>
+<mso:PublishingContactEmail msdt:dt="string"></mso:PublishingContactEmail>
+<mso:DefaultCssFile msdt:dt="string"></mso:DefaultCssFile>
+<mso:MasterPageDescription msdt:dt="string"></mso:MasterPageDescription>
+<mso:UIVersion msdt:dt="string">;#15;#</mso:UIVersion>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>

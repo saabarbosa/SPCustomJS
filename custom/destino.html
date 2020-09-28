@@ -1,0 +1,74 @@
+﻿<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<div class="container">
+    <h2>Tesauro de Contas Nacional - TCN</h2>
+    <ul class="list-group" id="tesauro"></ul>
+</div>
+
+
+
+
+<script>
+
+    function urlDecode(string, overwrite) {
+        if (!string || !string.length) {
+            return {};
+        }
+        var obj = {};
+        var pairs = string.split('&');
+        var pair, name, value;
+        var lsRegExp = /\+/g;
+        for (var i = 0, len = pairs.length; i < len; i++) {
+            pair = pairs[i].split('=');
+            name = unescape(pair[0]);
+            value = unescape(pair[1]).replace(lsRegExp, " ");
+            //value = decodeURIComponent(pair[1]).replace(lsRegExp, " ");
+            if (overwrite !== true) {
+                if (typeof obj[name] == "undefined") {
+                    obj[name] = value;
+                } else if (typeof obj[name] == "string") {
+                    obj[name] = [obj[name]];
+                    obj[name].push(value);
+                } else {
+                    obj[name].push(value);
+                }
+            } else {
+                obj[name] = value;
+            }
+        }
+        return obj;
+    }
+
+
+    function getVar(param) {
+        var wl = window.location.href;
+        var params = urlDecode(wl.substring(wl.indexOf("?") + 1));
+        return (params[param]);
+    }
+
+
+    $(document).ready(function () {
+
+        var urlAPI = "https://tesauro.irbcontas.org.br/common/treedata.php?v=1";
+        var params = getVar("node");
+        if (params != undefined) {
+            urlAPI += "&node=" + params;
+        }
+        $.getJSON(urlAPI, function (data) {
+            console.log(data);
+            console.log(data.length);
+            for (i = 0; i < data.length; i++) {
+                html = $.parseHTML(data[i].label);
+                if (data[i].load_on_demand == true) {
+                    $("#tesauro").append("<li class='list-group-item'><span class='badge'>+</span><a href='destino.html?node=" + data[i].id + "'>" + html[0].innerHTML + "</a></li>");
+                } else {
+                    $("#tesauro").append("<li class='list-group-item'><a href='#' onClick='window.opener.document.getElementById(busca).value=122'>" + html[0].innerHTML + "</a></li>");
+                }
+            }
+
+        })
+    });
+
+</script>

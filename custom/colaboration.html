@@ -1,0 +1,70 @@
+﻿
+<!-- COLABORACAO -->
+<div id="dvColaboracao" ng-app="appColaboracao">
+    <div ng-controller="myCtrlColaboracao">
+        <div ng-repeat="col in records">
+            <a href="{{col.URL}}">
+            <div class="bloco-app-col bg-333">
+                <span class="icon-app-col"><img src="{{col.Imagem}}"></span>
+                <span class="text-app-col">{{col.Titulo}}</span>
+            </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+$("#dvColaboracao").hide(); 
+    
+$( document ).ready(function() {
+   var appColaboracao = angular.module("appColaboracao", []);
+   
+   appColaboracao.controller("myCtrlColaboracao", function($scope) { 
+
+        $SP().list("Colaboracao").get({
+        fields:"ID, Title, Imagem, URL, Ordem",
+        orderby:"ID DESC"
+        }).then (function(data) {
+            
+           colab = '[';    
+           for(i=0; i<data.length; i++){
+               if (i<(data.length-1)){
+                   colab+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Imagem":"'+ data[i].getAttribute("Imagem")+'","URL":"'+ data[i].getAttribute("URL") +'"},';
+               }else{
+                   colab+= '{"ID":"'+ data[i].getAttribute("ID") +'","Titulo":"'+ data[i].getAttribute("Title") +'","Imagem":"'+ data[i].getAttribute("Imagem")+'","URL":"'+ data[i].getAttribute("URL") +'"}';
+               }
+           }
+           colab += ']'; 
+           console.log('colab:'+ colab);
+           localStorage.setItem("Colaboracao",colab);
+
+        });
+
+        $scope.records = JSON.parse(localStorage.getItem("Colaboracao"));
+   });
+    var dvColaboracao = document.getElementById('dvColaboracao');
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvColaboracao, ['appColaboracao']);
+        $("#dvColaboracao").fadeIn();
+    }); 
+}); 
+
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingIsFurlPage msdt:dt="string">0</mso:PublishingIsFurlPage>
+<mso:PublishingContactPicture msdt:dt="string"></mso:PublishingContactPicture>
+<mso:PublishingRollupImage msdt:dt="string"></mso:PublishingRollupImage>
+<mso:Audience msdt:dt="string"></mso:Audience>
+<mso:PublishingContactName msdt:dt="string"></mso:PublishingContactName>
+<mso:Comments msdt:dt="string"></mso:Comments>
+<mso:PublishingContactEmail msdt:dt="string"></mso:PublishingContactEmail>
+<mso:DefaultCssFile msdt:dt="string"></mso:DefaultCssFile>
+<mso:MasterPageDescription msdt:dt="string"></mso:MasterPageDescription>
+<mso:UIVersion msdt:dt="string">;#15;#</mso:UIVersion>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>
